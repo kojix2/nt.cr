@@ -1,0 +1,10 @@
+version: 2.0
+shards:
+  dbus:
+    git: https://github.com/oprypin/crystal-dbus.git
+    version: 0.1.0+git.commit.dd744b951dc2bc12399ac518f3a042965f64392b
+
+  notify:
+    git: https://github.com/woodruffw/notify.cr.git
+    version: 0.1.1
+

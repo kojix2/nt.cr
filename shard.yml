@@ -1,0 +1,15 @@
+name: nt
+version: 0.1.0
+
+authors:
+  - kojix2 <2xijok@gmail.com>
+
+targets:
+  nt:
+    main: src/nt.cr
+
+dependencies:
+  notify:
+    github: woodruffw/notify.cr
+
+license: MIT
