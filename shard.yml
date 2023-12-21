@@ -11,5 +11,7 @@ targets:
 dependencies:
   notify:
     github: woodruffw/notify.cr
+  gettext:
+    github: GeopJr/gettext.cr
 
 license: MIT

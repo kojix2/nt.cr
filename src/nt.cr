@@ -1,6 +1,11 @@
 require "notify"
 require "option_parser"
+require "gettext"
 require "./nt/version"
+
+Gettext.setlocale(Gettext::LC::ALL, "")
+Gettext.bindtextdomain("com.kojix2.nt", {{env("NT_LOCALE_LOCATION").nil? ? "/usr/share/locale" : env("NT_LOCALE_LOCATION")}})
+Gettext.textdomain("com.kojix2.nt")
 
 OptionParser.parse do |parser|
   parser.banner = "Usage: nt <command>"
@@ -25,8 +30,18 @@ end.total_seconds.round(2)
 
 unless status.nil?
   if status.success?
-    notifier.notify "Success #{elapsed_time} sec", body: command
+    msg = String.build do |s|
+      s << Gettext.gettext("Success")
+      s << " #{elapsed_time} "
+      s << Gettext.gettext("sec")
+    end
+    notifier.notify msg, body: command
   else
-    notifier.notify "Failed #{elapsed_time} sec", body: command
+    msg = String.build do |s|
+      s << Gettext.gettext("Failed")
+      s << " #{elapsed_time} "
+      s << Gettext.gettext("sec")
+    end
+    notifier.notify msg, body: command
   end
 end

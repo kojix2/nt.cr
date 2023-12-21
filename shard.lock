@@ -4,6 +4,10 @@ shards:
     git: https://github.com/oprypin/crystal-dbus.git
     version: 0.1.0+git.commit.dd744b951dc2bc12399ac518f3a042965f64392b
 
+  gettext:
+    git: https://github.com/geopjr/gettext.cr.git
+    version: 1.0.0
+
   notify:
     git: https://github.com/woodruffw/notify.cr.git
     version: 0.1.1
