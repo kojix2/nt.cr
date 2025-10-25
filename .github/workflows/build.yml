@@ -26,7 +26,7 @@ jobs:
           shards install --without-development --release
       - name: Build executable
         run: shards build --release
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: nt-${{ matrix.os }}
           path: bin/nt
